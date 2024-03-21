@@ -1,0 +1,28 @@
+# Use the front controller as index file. It serves as a fallback solution when
+# every other rewrite/redirect fails (e.g. in an aliased environment without
+# mod_rewrite). Additionally, this reduces the matching process for the
+# start page (path "/") because otherwise Apache will apply the rewriting rules
+# to each configured DirectoryIndex file (e.g. index.php, index.html, index.pl).
+
+# secure htaccess file
+
+<Files .htaccess>
+ order allow,deny
+ deny from all
+</Files>
+
+# Evitar listado de directorios
+IndexIgnore *
+
+Options -Indexes
+# Define codificación de caracteres por defecto
+AddDefaultCharset UTF-8
+# Archivo por defecto
+DirectoryIndex CtrlIngreso.php
+# Redireccionado de archivo en caso de error 404 
+RewriteEngine On
+RewriteBase /
+ErrorDocument 404 Aun_No_Disponible
+RewriteCond %{REQUEST_URI} ^/404/$
+# RewriteRule ^(.*)$ /path/to/404.php [L]
+RewriteRule ^(.*)$ Aun_No_Disponible.php [L]

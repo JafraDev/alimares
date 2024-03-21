@@ -1,0 +1,112 @@
+:root{
+    --color-var:#024CA2;
+}
+.container{
+    margin-top: 15px;
+}
+body{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    bottom: 0px;
+}
+/* Fija cabecera de columnas en tablas */
+.tableFixHead          { overflow: auto; height: 550px; }
+.tableFixHead thead th { position: sticky; top: 0; z-index: 1; background-color: #f7f7f7;}
+/* Side nav */
+ul{
+    list-style-type:none;
+}
+ul li{
+    color:var(--color-var);
+    padding:3px;
+    border:0; 
+}
+ul li:hover{
+    padding-left:10px;
+    color:var(--color-var);
+    background: rgb(203,230,220);
+    background: linear-gradient(180deg, rgba(203,230,220,1) 0%, rgba(203,230,220,1) 0%, rgba(203,230,220,1) 90%, rgba(84,113,30,1) 100%);
+    border:0; 
+    border-bottom:1px solid rgb(160, 201, 160);
+}
+footer::before{
+    content: "\00a9"; 
+    font-weight: bolder;
+    color: var(--color-var);
+}
+footer::after{
+    content: "Alimares, v.16032024-1";
+    font-size: 10px;
+    color: var(--color-var)
+}
+.on{
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAABBUlEQVR4nI3Tyy4EURAG4G/cYsPCPIAESzJewYoIJsFY2FkTl51LxBuQ2HgEFjOIJ5RKqpPWeqb7TyrprlNV/3/qVFGPDno4QB+b6WvEHG4wwh2OcYR7fObZzLjkLobYnUCwj9dU1K0yD7HSQuUyvjBfdl43MBdYwE8qOCucnbxzE6bxjvXM+caU7PZtiwLP2Cn9P2Wufna7QPRhq5J8nlbGKQ7rCoTUt3y+wHayV3GSc6KXb15G3O0Fj/jIolU8YKOpiSF7cczZqDydV9jTHiH9ouyYzUFabZG8lrGR8wfFKE9SEswRszQuIKpe5uLEAg3SimUK2f+Y6xDNiQ4HY1h8167zL5AVI5tnPEL8AAAAAElFTkSuQmCC");
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    background-size: cover; 
+}
+.off{
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAADNklEQVR4nO2aT08UQRDFf0Zk12BEFhCPcjQY9UuooKjADcWbBi8iQa8qZ/RkQsLn0BCCRg2JGvEP6kVF5KRyMOLNBYJmTcU3SSfuLruzszO9hJdMslA13TXT1VXVrwa2sHmRAXqAW8Ak8BH4Cazpst8fJDOdM0ATniANnAfuA3+AXJnXb2AaGABSSTzATuAqsOQYtQo8Aq5rZQ7oje/Q1aT/mewG8Fj3BPd/A0b0cmLBSWDRMeAlcAFoDDHWHuAi8MoZ7zPQRRVhb2rCmfA1cCzC8TuBN87449VYnX0y3Cb4BVwGtkc9Cf/GvAJkndVui2rwdi13TlHnINXHIWBecy7IhorQ6gz4AmghPjQBTzT3orwiFNKOOz0DGogfDcBzx81C7ZkJx50s2SWFZscrLACUHWKDjR3Hnihlz2Rlk0W3kpNdkCcsOvmCYWfzl+Ri15w8UY0QGxZ1wFvZZg9VFCmVCqZ8FP9wQrYtbbQqA06E8BHbnEh6tpjiAylZ7eQrBmXjVCGFjMrq1ZAFYJyJcg1YL2Rnr570If5jRraeyie8LaGdJ3zHqGwdyyeclPA0/qNXtt7NJ/wkoZ3ifEeHbDVe4D8sS5hkXVUqWmTr93zCNQnr8R8phyfYvA+yXEOu1VrMtTbNZp+U0BhA39FXLPwGCdHIs5pOiD0SGltYKyVKd6FiLCgajQH0FRmnaNxdSGlaT2o0pq+4JBttTxfEOSkZF+vrwWpONvZvlGi+SvE4/qFbtn0ppQ0xIuU5D8mHd7JtqJQb0g7Xa4SyLxiRTfPlNIW6dFNW5FjSOAKsyKayWxnjzhsw2jLJumpBttwJM0BatFBORHISJPYuYFY2zFbSZ2xVYRa0FezvOBPfU6cdV3HDp91ZWnOzw8SzJxY0p1Xl+6MauM1xs6y4VwuHUaNO0WnFcae9UU+SdgJAToRyV4QZ21oZQZ4INnZVe++dzrIHrP1gyK8YMqqdgrIjJ1eKslu84eoMO+VMThWpldc3xTt1KGzX62pW06hPOjMOTxCUHUNJfQGREis+pSNAuZ9wrKuK7U/qAfKhUVysndruqff4w/moxn6/1/F0TLoFzxNboMbxF43HEhWF5DFZAAAAAElFTkSuQmCC");
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    background-size: cover; 
+}
+/* Dialog form title bar close button */
+.ui-dialog .ui-dialog-titlebar-close{
+    border:0;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABkklEQVR4nLVWy07CQBQd3apbX4mJhdxT0gX/hfoRKvGbFDa4KGEu0cTXBne+FrhFN7jA3GaESqedlsJNJpl0Oufce+6jVaqATZRak6WWZRwEuxo4ZqDNwDsT/WiicbQHWn3gqOd5O4WBQ9/fYuBCA98MTLKWJvrSQLMTBJu5wPtEFQ08uYA5SfSoAS8P+GdRcJ6tYSqJyLKI52yJxCqXaF4WnGck57ZqSSaUaMREz6lgcibvWBL/r7o00UmKJ4PQ9/c1UWg5C83ZwHZXSjguTzsj3HCexPbMcu9qRkD04dC0e1Or7TFRR/ZG0uvMO8BrBD5Rat10pytxoXjt8jz2/liwV08gxsCbSyI2ssTlckj0EoEbgtYKknw5JTATc6llykBjSiBNIc1haaRRBkDkQFqjdSuV7SmBiaLpShznXUSnat5kQMmgWgL4/V29vpEgMFF4MnJLEAx7vn+osqxfrR4wcLuA5w/OD86fSYgycq2JtySUic5SZckyqS6ZilLT0ozSnabrZS/PGolqKWOL/Lb8AuaeLvs+5Z8JAAAAAElFTkSuQmCC");
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+}
+/**************************************/
+#setDocsIcon, #smtAgregar{
+    border-radius: 50px;
+}
+#setDocsIcon:hover{
+    cursor:pointer;
+    background-color: var(--color-var);
+}
+#smtAgregar:hover{
+    cursor:pointer;
+    background-color: var(--color-var);
+}
+#tbDocs{
+    width: 100%;
+}
+#tbDocs tr{
+    border:0;
+    border-bottom:thin silver solid;
+}
+.enproceso{
+    font-weight: bold;
+    background-color: beige;
+}
+
+.section-title{
+    line-height: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    padding:3px;
+    margin-top:8px;
+    margin-bottom:2px;
+    width: 100%;
+    background-color: #fbf4f4;
+    border: solid thin #b1c8b1;
+    border-radius: 4px;
+}
+.section-menu{
+    padding:4px;
+    margin-right: 15px;
+}
+.section-menu:hover{
+    font-weight: bolder;
+    cursor: pointer;
+}
+.inactive{
+    display: none;
+}
