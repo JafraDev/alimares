@@ -82,6 +82,22 @@
             );
             return $dataArray;
         }  
+        public function getPerfilMenus($perfil){
+            $dataArray = [];
+            $dataArray =  $this->execQry(
+            "
+            select
+            pm.*,
+            m.nombre_menu menu
+            from
+                perfiles_menus pm
+                join menu m on m.id_menu = pm.id_menu 
+                where pm.perfil ='$perfil'
+                order by m.nombre_menu
+            "
+            );
+            return $dataArray;
+        }  
         /******************************/
         public function insertReg($my_stm){
             $result = $this->execNoQry($my_stm);

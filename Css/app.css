@@ -12,7 +12,7 @@ body{
     bottom: 0px;
 }
 /* Fija cabecera de columnas en tablas */
-.tableFixHead          { overflow: auto; height: 550px; }
+.tableFixHead          { overflow: auto; height: auto; }
 .tableFixHead thead th { position: sticky; top: 0; z-index: 1; background-color: #f7f7f7;}
 /* Side nav */
 ul{
