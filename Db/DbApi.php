@@ -136,7 +136,20 @@
             "
             );
             return $dataArray;
-        }              
+        }         
+        public function getClientes(){
+            $dataArray = [];
+            $dataArray =  $this->execQry(
+            "
+            select
+            *
+            from
+                clientes c
+            order by razon_social
+            "
+            );
+            return $dataArray;
+        }                
         /******************************/
         public function insertReg($my_stm){
             $result = $this->execNoQry($my_stm);

@@ -108,11 +108,9 @@
         </div>    
         <div class="card-body">
         <div class="row">
-            <!-- <label for="menuperfil">Acceso actual</label> -->
                 <div id="accesos_actuales" class="input-group mb-3"></div>                              
             </div>
         </div>
     </div>
-    <!-- <input type="hidden" name="id" id="id" value="0"> -->
 </form>
 <?php include_once "./Templates/Page_Content_Form_End.php"?>       

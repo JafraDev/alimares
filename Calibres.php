@@ -5,7 +5,7 @@
             <div class="card-header">Calibres</div>
             <div class="card-body">
                 <div class="row">
-                    <label for="jefatura">Calibre</label>
+                    <label for="calibre">Calibre</label>
                     <div class="input-group mb-3">
                         <span class="input-group-text" style="width: 35px;"><label id="id_reg"></label></span>
                         <input type="text" id="calibre" name="calibre" class="form-control" required/>

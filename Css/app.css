@@ -110,3 +110,6 @@ footer::after{
 .inactive{
     display: none;
 }
+a {
+    color: #3867fc;
+}

@@ -5,7 +5,7 @@
             <div class="card-header">Envases</div>
             <div class="card-body">
                 <div class="row">
-                    <label for="jefatura">Envase</label>
+                    <label for="envase">Envase</label>
                     <div class="input-group mb-3">
                         <span class="input-group-text" style="width: 35px;"><label id="id_reg"></label></span>
                         <input type="text" id="envase" name="envase" class="form-control" required/>
