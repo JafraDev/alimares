@@ -18,7 +18,7 @@
     function accesosperfil(){
         // 1. Crea un nuevo objeto XMLHttpRequest
         let xhr = new XMLHttpRequest();
-        // 2. Configuración: solicitud GET para la URL /article/.../load
+        // 2. Configuración: solicitud GET 
         var e = document.getElementById("perfil");
         var value = e.options[e.selectedIndex].value;
         var url = `./Db/GetPerfilesMenu.php?perfil=${value}`;
@@ -33,6 +33,36 @@
                 // alert(`Hecho, obtenidos ${xhr.response.length} bytes`); // Respuesta del servidor
                 // console.log(xhr.response);
                 document.getElementById("accesos_actuales").innerHTML = xhr.response;
+            }
+        };
+        // xhr.onprogress = function(event) {
+        //     if (event.lengthComputable) {
+        //         alert(`Recibidos ${event.loaded} de ${event.total} bytes`);
+        //     } else {
+        //         alert(`Recibidos ${event.loaded} bytes`); // sin Content-Length
+        //     }
+        // };
+        xhr.onerror = function() {
+            alert("Solicitud fallida");
+        };
+    }
+    function delAccesosPerfil(id_menu, perfil){
+        if(!confirm("¿Confirma que desea borrar registro seleccionado?")){
+            return;                
+        }
+        let xhr = new XMLHttpRequest();
+        var e = document.getElementById("perfil");
+        var value = e.options[e.selectedIndex].value;
+        var url = `./Db/DelPerfilesMenu.php?id_menu=${id_menu}&perfil=${perfil}`;
+        xhr.open('GET', url);
+        xhr.send();
+        xhr.onload = function() {
+            if (xhr.status != 200) {
+                alert(`Error ${xhr.status}: ${xhr.statusText}`);
+            } else {
+                // alert(`Hecho, obtenidos ${xhr.response.length} bytes`);
+                alert(xhr.response);
+                accesosperfil();
             }
         };
         // xhr.onprogress = function(event) {

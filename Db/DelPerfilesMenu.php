@@ -1,20 +1,22 @@
 <?php
     $id_menu = $_GET["id_menu"];
     $perfil = $_GET["perfil"];
-    $del=
+    $del =
     "
-    delete from perfiles_menus where perfil = '$perfil' and id_menu = $id_menu
+    INSERT into perfiles_menus (perfil, id_menu)
+    values ('$perfil', $id_menu)
+        ON DUPLICATE KEY 
+        UPDATE 
+        nulo = 1
     ";
-    echo $del;
-    // $dataResult = new DbApi();
-    // $dma  = new Db();
-    // $conn = $dma->setMyConnection();
-    // $result_del = $conn->query($del);
-    // if($result_del){
-    //     echo "<script>alert('Registro actualizado con éxito')</script>";
-    // }else{
-    //     echo "<label class='text-danger'><b>Se detectó un error al intentar actualizar el registro</b></label>";
-    //     echo "</br>";
-    // echo $ins_st;
-    // }
+
+    include_once "DbApi.php";
+    $dma = new DbApi();
+    $conn = $dma->setMyConnection();
+    $result_del = $conn->query($del);
+    if($result_del){
+        echo "Registro actualizado con éxito.";
+    }else{
+        echo "Se detectó un error al intentar actualizar el registro.";
+    }
 ?>

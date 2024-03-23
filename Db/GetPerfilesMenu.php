@@ -18,7 +18,7 @@
         echo "<tr>";
         echo "<td>".$decode_data[$key]['menu']."</td>";
         echo "<td>";
-        echo "<a href=\"./Db/DelPerfilesMenu.php?id_menu=".$decode_data[$key]['id_menu']."&perfil=".$decode_data[$key]['perfil']."\" class=\"icon-delete24x24\"></a>";
+        echo "<a onclick=\"delAccesosPerfil(".$decode_data[$key]['id_menu'].",'".$decode_data[$key]['perfil']."')\" class=\"icon-delete24x24\"></a>";
         echo "</td>";
         echo "</tr>";
     }      

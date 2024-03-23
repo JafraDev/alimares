@@ -2,7 +2,6 @@
     header("Content-Type: text/html;charset=utf-8");
     include_once "Db.php";
     class DbApi extends Db{
-
         /********** Alimares **********/
         public function getEspecies(){
             $dataArray = [];
@@ -93,11 +92,51 @@
                 perfiles_menus pm
                 join menu m on m.id_menu = pm.id_menu 
                 where pm.perfil ='$perfil'
+                and pm.nulo = 0
                 order by m.nombre_menu
             "
             );
             return $dataArray;
         }  
+        public function getCalidades(){
+            $dataArray = [];
+            $dataArray =  $this->execQry(
+            "
+            select
+            *
+            from
+                calidades c
+            order by nombre
+            "
+            );
+            return $dataArray;
+        } 
+        public function getConservaciones(){
+            $dataArray = [];
+            $dataArray =  $this->execQry(
+            "
+            select
+            *
+            from
+                conservaciones c
+            order by nombre
+            "
+            );
+            return $dataArray;
+        }              
+        public function getEnvases(){
+            $dataArray = [];
+            $dataArray =  $this->execQry(
+            "
+            select
+            *
+            from
+                envases e
+            order by nombre
+            "
+            );
+            return $dataArray;
+        }              
         /******************************/
         public function insertReg($my_stm){
             $result = $this->execNoQry($my_stm);

@@ -12,7 +12,7 @@
             "
             ('$perfil', $id_menu),";            
         }
-        $ins_st = substr($ins_st, 0, -1).";";
+        $ins_st = substr($ins_st, 0, -1)." ON DUPLICATE KEY UPDATE nulo = 0";
         // echo $ins_st;
         // return;
         $dataResult = new DbApi();
