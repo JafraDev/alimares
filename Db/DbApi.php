@@ -149,7 +149,86 @@
             "
             );
             return $dataArray;
-        }                
+        }           
+        public function getProveedores(){
+            $dataArray = [];
+            $dataArray =  $this->execQry(
+            "
+            select
+            *
+            from
+                proveedores p
+            order by razon_social
+            "
+            );
+            return $dataArray;
+        } 
+        public function getGuiaProveedorNumero($idProveedor, $n_guia){
+            $dataArray = [];
+            $dataArray =  $this->execQry(
+            "
+            select
+            gdc.id_guia,gdc.num_guia,gdc.id_proveedor,gdc.fecha_recepcion,gdc.decla_jurada,gdc.decla_garantia,gdc.id_origen,gdc.origen,
+            gdd.id_guia id_guia_cab,gdd.id_especie,gdd.id_producto,gdd.id_conservacion,gdd.id_envase,gdd.unidades,gdd.peso,gdd.id_reg,
+            e.nombre especie,
+            p.nombre producto,
+            c.nombre conservacion,
+            e2.nombre envase
+            from
+                guias_d_cab gdc
+	            left join guias_d_det gdd on gdd.id_guia = gdc.id_guia
+	            left join especies e on e.id_especie = gdd.id_especie 
+	            left join productos p on p.id_producto = gdd.id_producto 
+	            left join conservaciones c on c.id_conservacion = gdd.id_conservacion 
+	            left join envases e2 on e2.id_envase = gdd.id_envase 
+            where
+                gdc.nulo = 0
+                and (gdd.nulo = 0 or gdd.nulo IS NULL) 
+                and gdc.num_guia = $n_guia
+                and gdc.id_proveedor = $idProveedor
+            "
+            );
+            return $dataArray;
+        }  
+        public function getCcultivos(){
+            $dataArray = [];
+            $dataArray =  $this->execQry(
+            "
+            select
+            *
+            from
+                c_cultivos c
+            order by nombre
+            "
+            );
+            return $dataArray;
+        }     
+        public function getOrigenes(){
+            $dataArray = [];
+            $dataArray =  $this->execQry(
+            "
+            select
+            *
+            from
+                origenes o
+            order by nombre
+            "
+            );
+            return $dataArray;
+        }  
+        public function getP_proceso(){
+            $dataArray = [];
+            $dataArray =  $this->execQry(
+            "
+            select
+            *
+            from
+                plantas_proceso
+            order by nombre
+            "
+            );
+            return $dataArray;
+        }                                                     
         /******************************/
         public function insertReg($my_stm){
             $result = $this->execNoQry($my_stm);

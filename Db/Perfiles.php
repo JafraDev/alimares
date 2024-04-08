@@ -1,6 +1,6 @@
 <?php
     if(!empty($_POST["agregar"])){
-        $nombre = $_POST["nombre_perfil"];
+        $nombre = trim($_POST["nombre_perfil"]);
         $id = $_POST["perfil"];
         $ins_st = 
         "

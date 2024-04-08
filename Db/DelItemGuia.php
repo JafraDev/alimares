@@ -1,10 +1,9 @@
 <?php
-    $id_menu = trim($_GET["id_menu"]);
-    $perfil = trim($_GET["perfil"]);
+    $id = $_GET["id"];
     $del =
     "
-    INSERT into perfiles_menus (perfil, id_menu)
-    values ('$perfil', $id_menu)
+    INSERT into guias_d_det (id_reg)
+    values ($id)
         ON DUPLICATE KEY 
         UPDATE 
         nulo = 1

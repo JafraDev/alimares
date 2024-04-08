@@ -1,6 +1,6 @@
 <?php
     if(!empty($_POST["guardar"])){
-        $perfil = $_POST["perfil"];
+        $perfil = trim($_POST["perfil"]);
         $options = $_POST["menus"];
         
         $ins_st = 

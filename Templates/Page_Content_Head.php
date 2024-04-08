@@ -10,6 +10,7 @@
     <script src="./Scripts/jquery-3.6.0.js"></script>
     <script src="./Scripts/jquery-ui.js"></script>
     <script src="./Scripts/bootstrap.min.js"></script>
+    <script src="./Scripts/app.js"></script>
     
     <!-- Estilos -->
     <!-- ------- -->

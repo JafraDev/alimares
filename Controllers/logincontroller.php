@@ -17,17 +17,9 @@
             and u.contraseña = '$userpassword'
             and u.activo = 1                
             ";
-            
-            $host = 'localhost';
-            $db = 'Emat';
-            $user = 'alimares';
-            $password = 'alim@2024';
-            $conn = new mysqli($host, $user, $password, $db);
-            $conn->set_charset("utf8");
-            if ($conn->connect_error) {
-                die("Falló la conexión: " . $conn->connect_error);
-            }
-
+            include_once "./Db/Db.php";
+            $dma  = new Db();
+            $conn = $dma->setMyConnection();
             $qry_result =  $conn->query($query);
             $data = $qry_result->fetch_object();
             if($qry_result){

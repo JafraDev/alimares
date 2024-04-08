@@ -1,10 +1,10 @@
 <?php
     if(!empty($_POST["agregar"])){
-        $nombre = strtoupper(trim($_POST["especie"]));
+        $nombre = strtoupper(trim($_POST["c_cultivo"]));
         $id = $_POST["id"];
         $ins_st = 
         "
-        INSERT into especies (id_especie, nombre)
+        INSERT into c_cultivos (id_ccultivo, nombre)
         values ($id, '$nombre')
             ON DUPLICATE KEY 
             UPDATE 

@@ -1,21 +1,20 @@
 <?php
     if(!empty($_POST["agregar"])){
         $rut = strtoupper(trim($_POST["rut"]));
-        $nombre     = strtoupper(trim($_POST["nombre"]));
-        $usuario    = $_POST["usuario"];
-        $contraseña = md5($_POST["contraseña"]);
-        $activo     = ($_POST["activo"] == "on") ? 1 : 0;
+        $razon_social = strtoupper(trim($_POST["razon_social"]));
+        $nombre_fantasia = strtoupper(trim($_POST["nombre_fantasia"]));
+        $domicilio_comercial = strtoupper(trim($_POST["domicilio_comercial"]));
         $id = $_POST["id"];
-
         $ins_st = 
         "
-        INSERT into usuarios (id_usuario, rut, nombre, usuario, contraseña)
-        values ($id, '$rut', '$nombre', '$usuario', '$contraseña')
+        INSERT into proveedores (id_proveedor, rut, razon_social, nombre_fantasia, domicilio_comercial)
+        values ($id, '$rut', '$razon_social', '$nombre_fantasia', '$domicilio_comercial')
             ON DUPLICATE KEY 
             UPDATE 
-            rut     = '$rut',
-            nombre  = '$nombre',
-            contraseña  = '$contraseña'
+            rut                 = '$rut', 
+            razon_social        = '$razon_social', 
+            nombre_fantasia     = '$nombre_fantasia', 
+            domicilio_comercial = '$domicilio_comercial'
         ";
         $dataResult = new DbApi();
         $dma  = new Db();

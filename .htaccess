@@ -22,7 +22,7 @@ DirectoryIndex CtrlIngreso.php
 # Redireccionado de archivo en caso de error 404 
 RewriteEngine On
 RewriteBase /
-ErrorDocument 404 Aun_No_Disponible
+ErrorDocument 404 "<h1 style=\"color:blue; width:30%;margin:0 auto; text-align:center;\">Aun No Disponible</h1>"
 RewriteCond %{REQUEST_URI} ^/404/$
 # RewriteRule ^(.*)$ /path/to/404.php [L]
 RewriteRule ^(.*)$ Aun_No_Disponible.php [L]

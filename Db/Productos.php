@@ -1,6 +1,6 @@
 <?php
     if(!empty($_POST["agregar"])){
-        $nombre = strtoupper($_POST["producto"]);
+        $nombre = strtoupper(trim($_POST["producto"]));
         $id = $_POST["id"];
         $ins_st = 
         "

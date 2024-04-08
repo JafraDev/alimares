@@ -29,7 +29,7 @@
         xhr.onload = function() {
             if (xhr.status != 200) { // analiza el estado HTTP de la respuesta
                 alert(`Error ${xhr.status}: ${xhr.statusText}`); // ej. 404: No encontrado
-            } else { // muestra el resultado
+            } else { 
                 // alert(`Hecho, obtenidos ${xhr.response.length} bytes`); // Respuesta del servidor
                 // console.log(xhr.response);
                 document.getElementById("accesos_actuales").innerHTML = xhr.response;

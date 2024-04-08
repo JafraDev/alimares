@@ -1,9 +1,9 @@
 <?php
     if(!empty($_POST["agregar"])){
-        $rut = strtoupper($_POST["rut"]);
-        $razon_social = strtoupper($_POST["razon_social"]);
-        $nombre_fantasia = strtoupper($_POST["nombre_fantasia"]);
-        $domicilio_comercial = strtoupper($_POST["domicilio_comercial"]);
+        $rut = strtoupper(trim($_POST["rut"]));
+        $razon_social = strtoupper(trim($_POST["razon_social"]));
+        $nombre_fantasia = strtoupper(trim($_POST["nombre_fantasia"]));
+        $domicilio_comercial = strtoupper(trim($_POST["domicilio_comercial"]));
         $id = $_POST["id"];
         $ins_st = 
         "
