@@ -31,15 +31,16 @@
                 echo "<ul><li><a href='Inicio.php'><span class='icon-home'>  Inicio</span></a></li></ul>";
                 $p = $decode_data['padre'];                
                 echo "<ul><span>".$p."</span>";
-                echo "<li><a href = ".$decode_data['url']." > <span>".$decode_data['nombre_menu']."</span></a></li>";
+                echo "<ul class=\"submenu\"><li><a href = ".$decode_data['url']." > <span>".$decode_data['nombre_menu']."</span></a></li>";
             }else{
                 if($p == $decode_data['padre']){
                     echo "<li><a href = ".$decode_data['url']." > <span>".$decode_data['nombre_menu']."</span></a></li>";
                 }else{
                     echo "</ul>";
+                    echo "</ul>";
                     $p = $decode_data['padre'];                
                     echo "<ul><span>".$p."</span>";
-                    echo "<li><a href = ".$decode_data['url']." > <span>".$decode_data['nombre_menu']."</span></a></li>";
+                    echo "<ul class=\"submenu\"><li><a href = ".$decode_data['url']." > <span>".$decode_data['nombre_menu']."</span></a></li>";
                 }
             }
             $r++;

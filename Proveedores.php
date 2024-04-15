@@ -27,7 +27,12 @@
                     <label for="domicilio_comercial">Domicilio comercial</label>
                     <div class="input-group mb-3">
                         <input type="text" id="domicilio_comercial" name="domicilio_comercial" class="form-control" required/>
-                    </div>                              
+                    </div>    
+                    <label for="conf_lote">Config. lote</label>
+                    <div class="input-group mb-1">
+                        <input type="text" id="conf_lote" name="conf_lote" class="form-control" required placeholder="máximo 10 caracteres"/>
+                    </div>    
+
                 </div>
             </div>
             <div class="card-footer">    

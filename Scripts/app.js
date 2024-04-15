@@ -137,6 +137,27 @@ function Guia_D_D_Save(data){
     };
     xhr.send(data);
 }
+function Ot_Save(data){
+    d = JSON.parse(data)
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "./Db/Ot.php");
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            msg = JSON.parse(xhr.responseText)
+            document.getElementById("id_ot").value = msg.id
+            document.getElementById("id").value = msg.id
+            // document.getElementById("id_guia").value = msg.id
+            document.getElementById('guia').readOnly = true;
+            document.getElementById('proveedor').disabled = true;
+            alert(msg.mensaje);
+        }else{
+            console.log(xhr.statusText);
+        }
+    };
+    xhr.send(data);
+}
 function delGuItem(id){
     if(confirm("¿Confirma que desea borrar el registro seleccionado?")){
         let xhr = new XMLHttpRequest();
@@ -214,11 +235,8 @@ function getDetalleGuia(idProveedor, n_guia){
             if(xhr.response == 0){
                 alert("No se encontró registros para la consulta.");
             }else{
-                $('#tbDetalleGuia > tbody').empty();
-                msg = JSON.parse(xhr.responseText)
-                for(i = 0; i < msg.length; i++){
-                    showDetalleGuia(msg[i])
-                }
+                $("#detalleGuia").html("");
+                $("#detalleGuia").append(xhr.responseText);
             }
         }
     };
@@ -275,7 +293,7 @@ function showDetalleGuia(msg){
     <td>${newText_4}</td>
     <td>${newText_5}</td>
     <td>${newText_6}</td>
-    <td><input type=\"radio\" name=\"sel_to_ot\"></td>
+    <td><input type=\"radio\" name=\"id_reg\" id=\"id_reg_${msg.id_reg}\" value=\"${msg.id_reg}\ disabled=true"></td>
     </tr>`;
     $('#tbDetalleGuia > tbody:last-child').append(newRowIH);
 }

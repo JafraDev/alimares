@@ -19,6 +19,7 @@
         document.getElementById(\"rut\").value = (\"".$decode_data[$key]['rut']."\");
         document.getElementById(\"nombre_fantasia\").value = (\"".$decode_data[$key]['nombre_fantasia']."\");
         document.getElementById(\"domicilio_comercial\").value = (\"".$decode_data[$key]['domicilio_comercial']."\");
+        document.getElementById(\"conf_lote\").value = (\"".$decode_data[$key]['conf_lote']."\");
         document.getElementById(\"id\").value = (this.parentElement.innerText); 
         document.getElementById(\"id_reg\").innerText = (this.parentElement.innerText); 
         document.getElementById(\"razon_social\").value = (this.parentElement.nextSibling.innerText)'>".$decode_data[$key]['id_proveedor']."</a></td>";

@@ -4,17 +4,19 @@
         $razon_social = strtoupper(trim($_POST["razon_social"]));
         $nombre_fantasia = strtoupper(trim($_POST["nombre_fantasia"]));
         $domicilio_comercial = strtoupper(trim($_POST["domicilio_comercial"]));
+        $conf_lote = strtoupper(trim($_POST["conf_lote"]));
         $id = $_POST["id"];
         $ins_st = 
         "
-        INSERT into proveedores (id_proveedor, rut, razon_social, nombre_fantasia, domicilio_comercial)
-        values ($id, '$rut', '$razon_social', '$nombre_fantasia', '$domicilio_comercial')
+        INSERT into proveedores (id_proveedor, rut, razon_social, nombre_fantasia, domicilio_comercial, conf_lote)
+        values ($id, '$rut', '$razon_social', '$nombre_fantasia', '$domicilio_comercial', '$conf_lote')
             ON DUPLICATE KEY 
             UPDATE 
             rut                 = '$rut', 
             razon_social        = '$razon_social', 
             nombre_fantasia     = '$nombre_fantasia', 
-            domicilio_comercial = '$domicilio_comercial'
+            domicilio_comercial = '$domicilio_comercial',
+            conf_lote           = '$conf_lote' 
         ";
         $dataResult = new DbApi();
         $dma  = new Db();

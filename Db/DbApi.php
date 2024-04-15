@@ -173,14 +173,17 @@
             e.nombre especie,
             p.nombre producto,
             c.nombre conservacion,
-            e2.nombre envase
+            e2.nombre envase,
+            COALESCE(ot.id_guia, 0) ot_guia_c,
+            COALESCE(ot.id_reg, 0) ot_guia_d
             from
                 guias_d_cab gdc
 	            left join guias_d_det gdd on gdd.id_guia = gdc.id_guia
 	            left join especies e on e.id_especie = gdd.id_especie 
 	            left join productos p on p.id_producto = gdd.id_producto 
 	            left join conservaciones c on c.id_conservacion = gdd.id_conservacion 
-	            left join envases e2 on e2.id_envase = gdd.id_envase 
+	            left join envases e2 on e2.id_envase = gdd.id_envase
+	            left join ot on ot.id_guia = gdc.id_guia and ot.id_reg	= gdd.id_reg             
             where
                 gdc.nulo = 0
                 and (gdd.nulo = 0 or gdd.nulo IS NULL) 
