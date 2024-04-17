@@ -49,7 +49,7 @@
                 <td>".$value["envase"]."</td>
                 <td>".$value["unidades"]."</td>
                 <td>".$value["peso"]."</td>
-                <td><input type=\"radio\" name=\"id_reg\" id=\"id_reg_".$value["id_reg"]."\" value=\"".$value["id_reg"]."\" ".$activo."></td>
+                <td><input type=\"radio\" name=\"id_reg\" id=\"id_reg_".$value["id_reg"]."\" value=\"".$value["id_reg"]."\"".$activo."></td>
                 </tr>";
             }
             "</tbody>

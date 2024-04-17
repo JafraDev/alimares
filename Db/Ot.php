@@ -9,17 +9,18 @@
         $id_reg= $data->id_reg;
         $lote  = $data->lote;
         $restricciones_origen  = $data->restricciones_origen;
-
+        $peso_f_v = $data->peso_f_v;
         $ins_st = 
         "
-        INSERT into ot (id_ot, id_guia, id_reg, lote, restricciones_origen)
-        values ($id, $guia, $id_reg, '$lote', '$restricciones_origen')
+        INSERT into ot (id_ot, id_guia, id_reg, lote, restricciones_origen, peso_f_v)
+        values ($id, $guia, $id_reg, '$lote', '$restricciones_origen', $peso_f_v)
             ON DUPLICATE KEY 
             UPDATE 
             id_guia = $guia,
             id_reg = $id_reg,
             lote = '$lote',
-            restricciones_origen = '$restricciones_origen'
+            restricciones_origen = '$restricciones_origen',
+            peso_f_v = $peso_f_v
         ";
 
         include_once "DbApi.php";

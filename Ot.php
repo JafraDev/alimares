@@ -37,10 +37,21 @@
                         <label for="lote">Lote</label>
                         <input type="text" id="lote" name="lote" class="form-control" required/>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-3">
                         <label for="restricciones_origen">Restricciones de origen</label>
                         <input type="text" id="restricciones_origen" name="restricciones_origen" class="form-control" required/>
-                    </div>                    
+                    </div>         
+                    <div class="col-md-3">
+                        <label for="">Configuración de peso</label>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label for="peso_f_V_0">Peso fijo</label>
+                                <input type="radio" id="peso_f_v_0" name="peso_f_v" class="form-check-input" checked value="0"/>
+                                <label for="peso_f_V_1">Peso variable</label>
+                                <input type="radio" id="peso_f_v_1" name="peso_f_v" class="form-check-input" value="1"/>
+                            </div>
+                        </div>
+                    </div>            
                 </div>
                 <div class="row" id="detalleGuia"></div>
             </div>
