@@ -27,7 +27,6 @@
                 <div class="row">
                     <label for="guia">Número guía</label>
                     <div class="input-group mb-3">
-                        <!-- <span class="input-group-text" style="width: 35px;"><label id="id_reg"></label></span> -->
                         <input type="text" id="guia" name="guia" class="form-control" required onkeypress="return soloNumeros(event)"/>
                         <button class="btn btn-outline-secondary btn-primary" type="button" id="btnBuscar" onclick="getDetalleGuia(proveedor.value, guia.value)">Buscar</button>
                     </div>                     

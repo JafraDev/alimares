@@ -231,7 +231,36 @@
             "
             );
             return $dataArray;
-        }                                                     
+        }  
+        public function getOtDet($idOt, $idProveedor){
+            $dataArray = [];
+            $dataArray =  $this->execQry(
+            "
+            select
+                ot.*,
+                p.nombre_fantasia \"Proveedor\",
+                e.nombre \"Especie\",
+                p2.nombre \"Producto\",
+                c.nombre \"Conservacion\",
+                e2.nombre \"Envase\",
+                gdd.unidades \"Unidades\",
+                gdd.peso \"Peso\"
+            from
+                ot
+                join guias_d_cab gdc  ON gdc.id_guia = ot.id_guia 
+                join guias_d_det gdd  on gdd.id_reg = ot.id_reg and gdd.id_guia = gdc.id_guia 
+                join proveedores p on p.id_proveedor = gdc.id_proveedor 
+                join especies e on e.id_especie = gdd.id_especie 
+                join productos p2 on p2.id_producto = gdd.id_producto 
+                join conservaciones c on c.id_conservacion = gdd.id_conservacion 
+                join envases e2 on e2.id_envase = gdd.id_envase 	
+                where 
+                ot.id_ot = $idOt
+                and gdc.id_proveedor = $idProveedor
+            "
+            );
+            return $dataArray;
+        }                                                   
         /******************************/
         public function insertReg($my_stm){
             $result = $this->execNoQry($my_stm);

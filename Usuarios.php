@@ -34,7 +34,15 @@
                     <div class="input-group mb-3">
                         <input type="password" id="confirme" name="contraseña" class="form-control" required/>
                     </div>                              
-                </div>                
+                </div>          
+                <div class="row">
+                    <label for="confirme">Perfil</label>
+                    <div class="input-group mb-3">
+                        <?php
+                            include_once "./Db/GetPerfilesSelUsuario.php";
+                        ?>
+                    </div>                              
+                </div>                                
                 <div class="row">
                     <label for="activo">Activo</label>
                     <div class="mb-3">

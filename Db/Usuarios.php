@@ -5,6 +5,7 @@
         $usuario    = $_POST["usuario"];
         $contraseña = md5($_POST["contraseña"]);
         $activo     = ($_POST["activo"] == "on") ? 1 : 0;
+        $perfil     = $_POST["perfil"];
         $id = $_POST["id"];
 
         $ins_st = 
@@ -22,7 +23,17 @@
         $conn = $dma->setMyConnection();
         $result_insert = $conn->query($ins_st);
         if($result_insert){
-            echo "<label class='text-info'>Registro guardado con éxito</label>";
+            $ins_st_1 = 
+            "
+            INSERT into perfiles_usuarios (usuario, perfil)
+            values ('$usuario', '$perfil')
+            ON DUPLICATE KEY 
+            UPDATE 
+            usuario     = '$usuario',
+            perfil      = '$perfil'
+            ";
+            $dataResult->insertReg($ins_st_1);
+            echo "<label class='text-info'>Registro guardado con éxito.</label>";
         }else{
             echo "<label class='text-danger'><b>Se detectó un error al intentar agregar el registro</b></label>";
             echo "</br>";

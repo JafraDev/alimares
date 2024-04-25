@@ -325,3 +325,30 @@ function getDetalleGuiaProveedor(idProveedor, n_guia){
         alert("Solicitud fallida");
     };
 }
+function getDetalleOt(idProveedor, idOt){
+    id_Proveedor = idProveedor || 0;
+    idOt = idOt || 0
+    if(id_Proveedor == 0 || idOt == 0){
+        alert("Debe indicar proveedor y/o guía")
+        return;
+    }
+    let xhr = new XMLHttpRequest();
+    var url = `./Db/GetOtDetTB.php?idOt=${idOt}&idProveedor=${id_Proveedor}`;
+    xhr.open('GET', url);
+    xhr.send();
+    xhr.onload = function() {
+        if (xhr.status != 200) {
+            alert(`Error ${xhr.status}: ${xhr.statusText}`);
+        } else {
+            if(xhr.response == 0){
+                alert("No se encontró registros para la consulta.");
+            }else{
+                $("#detallOt").html("");
+                $("#detalleOt").append(xhr.responseText);
+            }
+        }
+    };
+    xhr.onerror = function() {
+        alert("Solicitud fallida");
+    };
+}
